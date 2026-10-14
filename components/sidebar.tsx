@@ -33,7 +33,7 @@ export function Sidebar() {
             <span>NextBeats</span>
           </FastLink>
           <a
-            href="https://github.com/vercel-labs/next-beats"
+            href="https://github.com/nextjs/next-beats"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray rounded-full p-1.5 transition-colors hover:text-black dark:hover:text-white"
