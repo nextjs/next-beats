@@ -1,6 +1,6 @@
 import 'server-only';
 
-import { unstable_navigation as navigation } from 'next/cache';
+import { navigation } from 'next/cache';
 import { notFound } from 'next/navigation';
 import { verifyAuth } from '@/features/user/user-queries';
 import { prisma } from '@/lib/db';
