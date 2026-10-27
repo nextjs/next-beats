@@ -1,4 +1,4 @@
-import { unstable_navigation } from 'next/cache';
+import { navigation } from 'next/cache';
 import { ViewTransition } from 'react';
 import { Collapsible } from '@/components/ui/collapsible';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -48,7 +48,7 @@ export async function TrackRow({ track, index, showAlbum = true, queue }: Props 
 }
 
 export async function RecommendedTracks({ trackId }: { trackId: string }) {
-  await unstable_navigation();
+  await navigation();
   const tracks = await getRecommendedTracks(trackId);
   return (
     <div data-testid="recommended-tracks">
