@@ -9,5 +9,6 @@ export async function PlaylistBrowse({ excludeId, animateItems }: { excludeId?: 
     if (excludeId) return null;
     return <EmptyState title="No playlists" body="Create your first playlist." />;
   }
+
   return <PlaylistList playlists={filtered} animateItems={animateItems} />;
 }
