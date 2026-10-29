@@ -1,5 +1,5 @@
 import { Music } from 'lucide-react';
-import { ViewTransition } from 'react';
+
 import { Skeleton } from '@/components/ui/skeleton';
 import { AlbumArt } from '@/features/artwork/components/album-art';
 import { TrackPlayRow, NowPlayingTrackLink, TrackIndexCell } from '@/features/track/components/track-interactions';
@@ -14,26 +14,24 @@ export async function QuickPlayGrid() {
   return (
     <div className="relative grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
       {tracks.map(track => (
-        <ViewTransition key={track.id}>
-          <TrackPlayRow track={track}>
-            <div className="bg-card/60 hover:bg-card dark:bg-card-dark/60 dark:hover:bg-card-dark group/quick flex items-center gap-3 rounded-md px-3 py-2 transition-colors">
-              <TrackIndexCell trackId={track.id} />
-              <AlbumArt
-                coverColor={track.coverColor}
-                coverSeed={track.id}
-                label={track.title}
-                size="sm"
-                className="!h-10 !w-10 !rounded-md"
-              />
-              <div className="flex min-w-0 flex-1 flex-col">
-                <NowPlayingTrackLink trackId={track.id} href={`/track/${track.id}`}>
-                  {track.title}
-                </NowPlayingTrackLink>
-                <span className="text-muted truncate text-xs">{track.artist}</span>
-              </div>
+        <TrackPlayRow key={track.id} track={track}>
+          <div className="bg-card/60 hover:bg-card dark:bg-card-dark/60 dark:hover:bg-card-dark group/quick flex items-center gap-3 rounded-md px-3 py-2 transition-colors">
+            <TrackIndexCell trackId={track.id} />
+            <AlbumArt
+              coverColor={track.coverColor}
+              coverSeed={track.id}
+              label={track.title}
+              size="sm"
+              className="!h-10 !w-10 !rounded-md"
+            />
+            <div className="flex min-w-0 flex-1 flex-col">
+              <NowPlayingTrackLink trackId={track.id} href={`/track/${track.id}`}>
+                {track.title}
+              </NowPlayingTrackLink>
+              <span className="text-muted truncate text-xs">{track.artist}</span>
             </div>
-          </TrackPlayRow>
-        </ViewTransition>
+          </div>
+        </TrackPlayRow>
       ))}
       {Array.from({ length: fillers }).map((_, i) => (
         <div key={`filler-${i}`} aria-hidden className="flex items-center gap-3 rounded-md px-3 py-2 opacity-0">
