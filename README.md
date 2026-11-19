@@ -22,6 +22,7 @@ A [Next.js 16.3](https://nextjs.org/blog/next-16-3) music player demo showcasing
 - **[View Transitions](https://nextjs.org/docs/app/guides/view-transitions)** animate content updates and route changes as you move through the player.
 - **[Async React](https://github.com/rickhanlonii/async-react)** keeps the UI interactive during server work with `Suspense`, `useOptimistic`, `useTransition`, `useActionState`, `useFormStatus`, and `use`.
 - **[vGPU](https://github.com/vercel-labs/vgpu) cover art** pairs theme-matched, beat-reactive shaders with instant pre-rendered fallbacks.
+- **[Fast Link](https://github.com/vercel-labs/fast-link)** is installed for the navigation-on-press demo. The starter keeps normal Next.js link behavior; add `FastLinkRegion` around ordinary links or use `FastLink` per link to enable it while preserving existing prefetch settings.
 
 ## Getting started
 

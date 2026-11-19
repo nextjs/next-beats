@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@ariakit/react": "^0.4.28",
+    "@fast-link/next": "0.0.2",
     "@prisma/adapter-better-sqlite3": "^7.8.0",
     "@prisma/adapter-pg": "^7.8.0",
     "@prisma/client": "^7.8.0",
@@ -31,7 +32,7 @@
     "dotenv": "^17.4.2",
     "geist": "^1.7.0",
     "lucide-react": "^1.8.0",
-    "next": "16.4.0-canary.63",
+    "next": "16.5.0-canary.55",
     "next-themes": "^0.4.6",
     "pg": "^8.21.0",
     "prisma": "^7.8.0",
@@ -44,7 +45,7 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@next/playwright": "16.4.0-canary.63",
+    "@next/playwright": "16.5.0-canary.55",
     "@playwright/test": "^1.64.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
@@ -55,7 +56,7 @@
     "@vgpu/wgsl": "0.3.0",
     "babel-plugin-react-compiler": "^1.0.0",
     "eslint": "^9",
-    "eslint-config-next": "16.4.0-canary.63",
+    "eslint-config-next": "16.5.0-canary.55",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-autofix": "^2.2.0",
     "eslint-plugin-sort-keys-fix": "^1.1.2",
