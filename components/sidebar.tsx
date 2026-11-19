@@ -1,8 +1,8 @@
+import { FastLink } from '@fast-link/next';
 import { Heart, Home, Library, Plus, Search, Music } from 'lucide-react';
 import { Suspense } from 'react';
 import { ThemeToggle } from '@/components/theme/theme-toggle';
 import ErrorBoundary from '@/components/ui/error-boundary';
-import { FastLink } from '@/components/ui/fast-link';
 import { GitHubIcon } from '@/components/ui/github-icon';
 import { IconButtonLink, IconButtonLinkSkeleton } from '@/components/ui/icon-button-link';
 import { MusicNote } from '@/components/ui/music-note';

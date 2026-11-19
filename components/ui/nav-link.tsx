@@ -1,10 +1,10 @@
 'use client';
 
+import { FastLink } from '@fast-link/next';
 import { useSelectedLayoutSegments } from 'next/navigation';
-import { createContext, Suspense, useContext, useOptimistic, useState } from 'react';
+import { createContext, startTransition, Suspense, useContext, useOptimistic, useState } from 'react';
 import { Boundary } from '@/components/demo/boundary';
 import { usePrefetchDefault } from '@/components/demo/use-prefetch-default';
-import { FastLink } from '@/components/ui/fast-link';
 import { preloadImages } from '@/lib/preload-images';
 import type { PreloadImageSource } from '@/lib/preload-images';
 import type { Route } from 'next';
@@ -67,7 +67,7 @@ function NavLinkShell<T extends string>({
   const prefetch = usePrefetchDefault();
   // `prefetch` is already `true` or `null` (App Shell only) from the demo toggle.
   // Hover-gated links stay at `null` until intent, then upgrade to the full prefetch.
-  const resolvedPrefetch = !prefetch ? null : hoverPrefetch ? (intent ? true : null) : true;
+  const resolvedPrefetch = hoverPrefetch && !intent ? null : prefetch;
   if (resolvedPrefetch) preloadImages(preloadImageSources);
   const showIntent = () => setIntent(true);
   const destination = pathname(href);
@@ -79,7 +79,7 @@ function NavLinkShell<T extends string>({
       prefetch={resolvedPrefetch}
       {...rest}
       href={href as Route}
-      onPressNavigate={() => optimisticNavigation?.navigate(destination)}
+      onFastNavigate={() => startTransition(() => optimisticNavigation?.navigate(destination))}
       onMouseEnter={e => {
         if (hoverPrefetch) showIntent();
         onMouseEnter?.(e);

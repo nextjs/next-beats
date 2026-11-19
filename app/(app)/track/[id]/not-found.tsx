@@ -1,6 +1,6 @@
+import { FastLink } from '@fast-link/next';
 import { Music } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { FastLink } from '@/components/ui/fast-link';
 
 export default function TrackNotFound() {
   return (

@@ -1,7 +1,7 @@
 'use client';
 
+import { FastLink } from '@fast-link/next';
 import { usePrefetchDefault } from '@/components/demo/use-prefetch-default';
-import { FastLink } from '@/components/ui/fast-link';
 import { preloadImages } from '@/lib/preload-images';
 import type { PreloadImageSource } from '@/lib/preload-images';
 import type { Route } from 'next';
